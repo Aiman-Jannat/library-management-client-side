@@ -1,8 +1,11 @@
-# React + Vite
+# Library Management System
+Live Link:https://assignment-eleven-client-ed14d.web.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- This a Library management related website
+- Here a user can borrow books
+- A user must return books within 15 days
+- at a time a user can borrow same book just once
+- a user can choose category and see the books related to that category
+
