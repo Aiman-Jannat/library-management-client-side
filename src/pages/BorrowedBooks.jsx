@@ -12,7 +12,7 @@ const BorrowedBooks = () => {
     // console.log(email)
   
     useEffect(()=>{
-        fetch(`http://localhost:5000/borrowed?email=${userr.mail}`)
+        fetch(`http://localhost:5000/borrowed?email=${userr.email}`)
         .then(res=>res.json())
         .then(data=>setSimilar(data))
     },[])
