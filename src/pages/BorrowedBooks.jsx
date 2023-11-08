@@ -8,10 +8,11 @@ const BorrowedBooks = () => {
     const [similar,setSimilar]  = useState([]);
   const {userr} = useContext(AuthContext);
   
+  
     // console.log(email)
   
     useEffect(()=>{
-        fetch(`http://localhost:5000/borrowed?email=${userr?.email}`)
+        fetch(`http://localhost:5000/borrowed?email=${userr.mail}`)
         .then(res=>res.json())
         .then(data=>setSimilar(data))
     },[])

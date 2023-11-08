@@ -20,6 +20,7 @@ import Update from './pages/Update.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import SimilarCategory from './pages/SimilarCategory.jsx';
 import Error from './pages/Error.jsx';
+import PrivateRoute from './route/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/addBooks',
-        element:<AddBooks></AddBooks>
+        element:<PrivateRoute><AddBooks></AddBooks></PrivateRoute>
       },
       {
         path:'/allBooks',
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/borrowedBooks',
-        element:<BorrowedBooks></BorrowedBooks>
+        element:<PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>
       },
       {
         path:'/login',
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/update/:id',
-        element:<Update></Update>,
+        element:<PrivateRoute><Update></Update></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:5000/books/${params.id}`)
         // loader:({params})=>fetch(`http://localhost:5000/books/${params.id}`)
       },
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/details/:id',
-        element:<Details></Details>,
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:5000/books/${params.id}`)
 
       }
