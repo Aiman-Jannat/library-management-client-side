@@ -15,11 +15,13 @@ const Details = () => {
     const print = useLoaderData()
     const {userr} = useContext(AuthContext);
     const  [selectedDate,setSelectedDate] = useState();
+  
     const [insert, setInsert] = useState([])
     console.log(print);
     const handleInformation=(e)=>{
         e.preventDefault();
-        const info = {name,author,category,image,description,rating,quantity,selectedDate};
+        const email = userr?.email;
+        const info = {name,author, email,category,image,description,rating,quantity,selectedDate};
         console.log(info)
         axios.post('http://localhost:5000/borrowed',info)
         .then(res=>{
@@ -47,6 +49,7 @@ const Details = () => {
     }
     useEffect(() => {
         const today = new Date();
+        
         const returnDate = new Date(today);
         returnDate.setDate(today.getDate() + 15); // Add 15 days
     
