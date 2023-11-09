@@ -1,18 +1,24 @@
 import { useLoaderData } from "react-router-dom";
 import ShowAllBooks from "../components/ShowAllBooks";
 import { useState } from "react";
+import { useEffect } from "react";
 
 let p=true;
 const AllBooks = () => {
-    let books = useLoaderData();
+   const [books, setBooks] = useState([]);
+   useEffect(()=>{
+    fetch('https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books')
+    .then(res=>res.json())
+    .then(data=>setBooks(data))
+   },[]);
 //    let bookss = Object.entries(books).map(([key, value]) => ({ key, value }));
     // console.log(books,bookss)
-    let filtering=books;
+    
     
     const handleSubmit = () =>{
-        // filtering = books.toArray().filter(data =>data.quantity>0);
-        p=false;
-     }
+        const filtering = books.filter(data =>data.quantity>0);
+        setBooks(filtering);
+    }
      
     
     return (
@@ -22,7 +28,7 @@ const AllBooks = () => {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
             {
-             books.map(book=><ShowAllBooks key={book._id} book={book}></ShowAllBooks>)
+            books.map(book=><ShowAllBooks key={book._id} book={book}></ShowAllBooks>)
             }
         </div>
         </div>

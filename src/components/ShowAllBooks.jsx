@@ -17,7 +17,6 @@ const ShowAllBooks = ({book}) => {
     </h2>
     <div className="badge badge-secondary text-md p-3 mt-2 font-bold px-5">{category}</div>
     <p className="text-md font-bold mt-2">{author}</p>
-    <p>Quantity:{quantity}</p>
     <Star stars={rating}
     ></Star>
     {/* <div className="rating flex justify-start mt-2 flex-grow  w-full">

@@ -15,7 +15,7 @@ const ShowBorrowed = ({show}) => {
                 
                 const quantityy=quantity+1;
                 const updatedCount = {name,author,category,image,rating,quantityy};
-                axios.put(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${_id}`,updatedCount)
+                axios.patch(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${_id}`,updatedCount)
                 .then(res=>console.log(res.data))
             }
         })
