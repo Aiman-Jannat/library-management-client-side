@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader:()=>fetch('http://localhost:5000/categories')
+        loader:()=>fetch('https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/categories')
       },
       {
         path:'/addBooks',
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path:'/allBooks',
         element:<AllBooks></AllBooks>,
-        loader:()=>fetch('http://localhost:5000/books')
+        loader:()=>fetch('https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books')
       },
       {
         path:'/borrowedBooks',
@@ -57,18 +57,18 @@ const router = createBrowserRouter([
       {
         path:'/update/:id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/books/${params.id}`)
-        // loader:({params})=>fetch(`http://localhost:5000/books/${params.id}`)
+        loader:({params})=>fetch(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${params.id}`)
+        // loader:({params})=>fetch(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${params.id}`)
       },
       {
         path:'/similar/:id',
         element:<SimilarCategory></SimilarCategory>,
-        loader:({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
+        loader:({params})=>fetch(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/categories/${params.id}`)
       },
       {
         path:'/details/:id',
         element:<PrivateRoute><Details></Details></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/books/${params.id}`)
+        loader:({params})=>fetch(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${params.id}`)
 
       }
      

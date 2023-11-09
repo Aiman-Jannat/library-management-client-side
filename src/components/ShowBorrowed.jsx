@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 const ShowBorrowed = ({show}) => {
     const {_id,image,name,author,category,rating,quantity,selectedDate} = show;
     const handleReturn = ()=>{
-        axios.delete(`http://localhost:5000/borrowed/${_id}`)
+        axios.delete(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/borrowed/${_id}`)
         .then(res=>{
             if(res.data.acknowledged)
             {
@@ -15,7 +15,7 @@ const ShowBorrowed = ({show}) => {
                 
                 const quantityy=quantity+1;
                 const updatedCount = {name,author,category,image,rating,quantityy};
-                axios.put(`http://localhost:5000/books/${_id}`,updatedCount)
+                axios.put(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${_id}`,updatedCount)
                 .then(res=>console.log(res.data))
             }
         })

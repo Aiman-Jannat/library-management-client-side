@@ -12,7 +12,7 @@ const SimilarCategory = () => {
     const [similar,setSimilar]  = useState([]);
     console.log(category_name);
     
-    const url = `http://localhost:5000/books?category=${category_name}`
+    const url = `https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books?category=${category_name}`
     useEffect(()=>{
         fetch(url)
         .then(res=>res.json())

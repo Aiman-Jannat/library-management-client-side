@@ -16,8 +16,11 @@ const AddBooks = () => {
 
     const addedData = { name, author, category, rating, image, description,quantity}
     console.log(addedData)
-    axios.post(`http://localhost:5000/books`,addedData)
-    .then(res =>{if(res.data.acknowledged)
+    axios.post(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books`,addedData)
+    .then(res =>{
+      res.header("Access-Control-Allow-Origin","https://assignment-eleven-client-ed14d.web.app")
+      console.log(res)
+      if(res.data.acknowledged)
     {
       toast("Data added successfully!");
     }

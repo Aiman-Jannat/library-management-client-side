@@ -17,7 +17,7 @@ const Update = () => {
     const quantityy=quantity;
     const updatedData = { name, author, category, rating,quantityy, image}
     console.log(updatedData)
-    axios.put(`http://localhost:5000/books/${_id}`,updatedData)
+    axios.put(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${_id}`,updatedData)
     .then(res =>{if(res.data.acknowledged)
     {
       toast("Data updated successfully!");

@@ -23,7 +23,7 @@ const Details = () => {
         const email = userr?.email;
         const info = {name,author, email,category,image,description,rating,quantity,selectedDate};
         console.log(info)
-        axios.post('http://localhost:5000/borrowed',info)
+        axios.post('https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/borrowed',info)
         .then(res=>{
             // console.log(res);
             if(insert.includes(res.insertedId))
@@ -40,7 +40,7 @@ const Details = () => {
            const quantityy=quantity-1;
            
            const updatedCount = {name,author,category,image,rating,quantityy};
-                axios.put(`http://localhost:5000/books/${_id}`,updatedCount)
+                axios.put(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${_id}`,updatedCount)
                 .then(res=>console.log(res.data))
             
             }

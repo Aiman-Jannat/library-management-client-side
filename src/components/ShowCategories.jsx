@@ -8,7 +8,7 @@ const ShowCategories = ({category}) => {
     const {_id, category_name, image} = category;
    
     const handle = () =>{
-    //   axios.post(`http://localhost:5000/books/${category_name}`,categoryName)
+    //   axios.post(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${category_name}`,categoryName)
     //  .then(res=>console.log(res))
     }
     return (
