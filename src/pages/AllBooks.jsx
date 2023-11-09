@@ -24,7 +24,7 @@ const AllBooks = () => {
     return (
         <div className="lg:px-24">
 
-<button onClick={handleSubmit} className="w-full mt-14 btn btn-success text-white font-bold">Filter Available Books</button>
+<button onClick={handleSubmit} className="w-full mt-14 btn bg-gradient-to-r from-purple-500 to-black text-white font-bold">Filter Available Books</button>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
             {

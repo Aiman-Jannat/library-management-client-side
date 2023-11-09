@@ -21,7 +21,9 @@ const Details = () => {
     const handleInformation=(e)=>{
         e.preventDefault();
         const email = userr?.email;
-        const info = {name,author, email,category,image,description,rating,quantity,selectedDate};
+        const dummy = _id;
+        const borrowquanta = quantity;
+        const info = {dummy,name,author,borrowquanta, email,category,image,description,rating,quantity,selectedDate};
         console.log(info)
         axios.post('https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/borrowed',info)
         .then(res=>{

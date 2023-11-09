@@ -10,7 +10,7 @@ const Home = () => {
     const categories = useLoaderData();
     // console.log(categories)
     return (
-        <div className="bg-base-200">
+        <div className=" bg-slate-800">
              
             <Banner></Banner>
             <h1 className="mt-10 border w-fit p-2 mx-auto bg-purple-200 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span className="text-center text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-pink-400">Available Categories</span> </h1>

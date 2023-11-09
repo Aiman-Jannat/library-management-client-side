@@ -1,6 +1,7 @@
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../fireabase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext();
  
@@ -40,10 +41,47 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
         onAuthStateChanged(auth, currentUser=>{
+            const userEmail = currentUser?.email||userr?.email;
             setUser(currentUser);
             setLoading(false);
+            const loggedEmail ={
+                email:userEmail
+              };
+            if(currentUser){
+            fetch('https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/jwt',{
+            method:"POST",
+            headers:{
+                'content-type':'application/json'
+            },
+            withCredentials:true,
+            body:JSON.stringify(loggedEmail)
         })
-    },[]);
+        .then(res => res.json())
+        .then(data=>{
+            if(data.insertedId)
+            {
+              console.log(data);
+            }
+        });
+        }
+        else{
+            fetch('https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/logout',{
+            method:"POST",
+            headers:{
+                'content-type':'application/json'
+            },
+            withCredentials:true,
+            body:JSON.stringify(loggedEmail)
+        })
+        .then(res => res.json())
+        .then(data=>{
+            if(data.insertedId)
+            {
+              console.log(data);
+            }
+        });
+        }
+    })},[]);
 
     const auth = getAuth();
     const signInG = () =>{

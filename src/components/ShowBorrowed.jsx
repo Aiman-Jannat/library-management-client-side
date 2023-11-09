@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 
 const ShowBorrowed = ({show}) => {
-    const {_id,image,name,author,category,rating,quantity,selectedDate} = show;
+    const {_id,dummy,image,name,author,category,rating,quantity,selectedDate} = show;
     const handleReturn = ()=>{
         axios.delete(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/borrowed/${_id}`)
         .then(res=>{
@@ -13,9 +13,9 @@ const ShowBorrowed = ({show}) => {
             {
                 toast("Good Job!!you have successfully returned the book On time.")
                 
-                const quantityy=quantity+1;
+                const quantityy=quantity;
                 const updatedCount = {name,author,category,image,rating,quantityy};
-                axios.patch(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${_id}`,updatedCount)
+                axios.put(`https://assignment-eleven-library-server-dlu1h69dx-aimans-projects.vercel.app/books/${dummy}`,updatedCount)
                 .then(res=>console.log(res.data))
             }
         })
